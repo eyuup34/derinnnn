@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derin Seni Çok Seviyorum</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            color: #ff4d4d;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-top: 20px;
+            animation: glow 2.5s ease-in-out infinite;
+        }
+
+        /* FOTOĞRAF KUTULARI (2 numara) */
+        .photo-card {
+            background: #fff;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.25);
+            margin: 20px auto;
+            width: 250px;
+            transition: transform 0.3s;
+        }
+
+        .photo-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .photo-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* LOVE-LETTER FADE-IN (8 numara) */
+        .love-letter {
+            margin-top: 40px;
+            font-size: 1.1em;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            background: #fff0f0;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* NOT (10 numara) */
+        .footer-note {
+            margin-top: 30px;
+            font-size: 0.9em;
+            opacity: 0.7;
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px #ff4d4d; }
+            50% { text-shadow: 0 0 20px #ff8080; }
+            100% { text-shadow: 0 0 5px #ff4d4d; }
+        }
+
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 20px;
+            animation: float 4s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) scale(1); opacity: 1; }
+            50% { transform: translateY(-100px) scale(1.2); opacity: 0.7; }
+            100% { transform: translateY(-200px) scale(1); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seni çok seviyorum. Barışalımmı? ❤️</h1>
+
+    <div class="love-letter">
+        <p>Derin,</p>
+        <p>Ben yaptığım şeylerin farkındayım senden bunun için tekrardan özür diliyorum. Fark ettiysen değiştim; artık aynı hataları asla yapmayacağım.</p>
+        <p>Seni kıracak şekilde soğuk davranışlar yaptım, bunun farkındayım. Soğumanda haklıydın ama ben böyle bitmesini istemiyorum…</p>
+        <p>Eğer hala içinde biraz bile varsa… barışalımmı? ❤️</p>
+        <p>Seni gerçekten çok seviyorum. 😘💖</p>
+    </div>
+
+    <!-- Fotoğraflar (not yok) -->
+    <a href="https://ibb.co/j9z50Lhz">
+        <div class="photo-card">
+            <img src="https://i.ibb.co/nqB0dDrB/derin2.jpg" alt="derin2">
+        </div>
+    </a>
+
+    <a href="https://ibb.co/8DMvH7B1">
+        <div class="photo-card">
+            <img src="https://i.ibb.co/WWn8L23m/derin1.jpg" alt="derin1">
+        </div>
+    </a>
+
+    <!-- Küçük Not -->
+    <div class="footer-note">
+        Bu sayfa sadece senin için hazırlandı Derin… 💗
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤️';
+            document.body.appendChild(heart);
+            heart.style.left = Math.random() * window.innerWidth + 'px';
+            heart.style.bottom = '0px';
+
+            let animationTime = Math.random() * 2 + 3;
+            heart.style.animationDuration = animationTime + 's';
+
+            setTimeout(() => {
+                heart.remove();
+            }, animationTime * 1000);
+        }
+
+        setInterval(createHeart, 500);
+    </script>
+
+</body>
+</html>
